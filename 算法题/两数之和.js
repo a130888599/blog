@@ -13,6 +13,6 @@ function twoSum(nums, target) {
     if (targetNumIndex) { // 如果在哈希表中存在
       return [targetNumIndex, i]  // 直接返回[目标元素索引，当前索引]，并且目标元素索引必定比当前索引大
     }
-    prevNums[curNum] = i   // 如果没有，则该值添加到
+    prevNums[curNum] = i   // 如果没有，则该值添加到哈希表中
   }
 }
