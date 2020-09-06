@@ -17,15 +17,19 @@
     因此遇到空格应该修改p2
 */
 function replaceSpace1(s) {
+  if (!s.length)
+    return s
+
   let arr = Array.from(s)
   let spaceNum = 0
   let len = 0
-  while (len !== arr.length - 1) {
+  while (len !== arr.length) {
     if (arr[len] === ' ')
       spaceNum++
+    console.log(len);
     len++
   }
-  let [p1, p2] = [len, len + spaceNum * 2]
+  let [p1, p2] = [len - 1, len - 1 + spaceNum * 2]
   while (p1 !== p2) {
     if (arr[p1] !== ' ') {
       arr[p2] = s[p1]
@@ -50,5 +54,5 @@ function replaceSpace2(s) {
   return s
 }
 
-const res = replaceSpace2('We are happy.')
+const res = replaceSpace1("     ")
 console.log('res :>> ', res);
