@@ -16,7 +16,7 @@
     然后就发现有bug，直接修改p1的话，后面p2上来时会覆盖掉已经修改好的内容
     因此遇到空格应该修改p2
 */
-function replaceSpace(s) {
+function replaceSpace1(s) {
   let arr = Array.from(s)
   let spaceNum = 0
   let len = 0
@@ -42,5 +42,13 @@ function replaceSpace(s) {
   return arr.join('')
 }
 
-const res = replaceSpace('We are happy.')
+// 利用了JS原生函数的方法，不推荐，使用了这个方法，这道题就失去了意义
+function replaceSpace2(s) {
+  while (s.includes(' ')) {
+    s = s.replace(' ', '%20')
+  }
+  return s
+}
+
+const res = replaceSpace2('We are happy.')
 console.log('res :>> ', res);
