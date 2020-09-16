@@ -14,3 +14,5 @@ function findRepeatNumber(nums) {
     }
   }
 }
+
+// 二分法，根据抽屉原理，必然
