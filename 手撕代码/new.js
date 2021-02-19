@@ -30,7 +30,7 @@ function objectFactory() {
   obj.__proto__ = Constructor.prototype
   
   var ret = Constructor.apply(obj, arguments)
-  return typeof ret === 'object' ? ret : obj
+  return typeof ret === 'object' || ret === 'function' ? ret : obj
 }
 
 
@@ -50,3 +50,5 @@ console.log(person.habit) // Games
 console.log(person.strength) // 60
 
 person.sayYourName(); // I am Kevin
+
+const set = new Set()
